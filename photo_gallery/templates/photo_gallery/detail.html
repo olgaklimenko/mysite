@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'photo_gallery/style.css' %}"/>
+
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}style.css"/>
+<h1>{{ item.name }}</h1>
+{% if error_massage %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<form action="{% url 'photo_gallery:vote' item.id %}" method="post">
+{% csrf_token %}
+<table>
+<tr>
+{% for photo in item.photo_set.all %}
+    <th>
+        <input type="radio" name="photo" id="photo{{ forloop.counter }}" value="{{ photo.id }}" />
+        <label for="photo{{ forloop.counter }}">{{ photo.title }}</label><br />
+    </th>
+{% endfor %}
+</tr>
+<tr>
+{% for photo in item.photo_set.all %}
+    <td>
+        <img src="{{photo.image.thumb_url}}", id="image">
+    </td>
+{% endfor %}
+</tr>
+</table>  
+<input type="submit" value="Vote" />
+</form>
+

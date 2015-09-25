@@ -1,0 +1,13 @@
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}style.css"/>
+<h1>{{ item.name }}</h1>
+{% for photo in item.photo_set.all %}
+    <div class="images">
+    <div>   
+        {{ photo.title }}
+        <span class="votes">{{ photo.votes|pluralize }}</span>
+        <hr style="width:{{photo.votes}}%;">
+    </div></div>
+{% endfor %}
+
+
+

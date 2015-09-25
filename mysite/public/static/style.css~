@@ -1,0 +1,39 @@
+li a { 
+    color: green; 
+} 
+
+a { 
+    color: green; 
+} 
+
+h1 { 
+    color: indigo; 
+} 
+
+.images div {
+        position: relative;
+        padding: 0 50px 14px 20px;
+        width: 800px;
+    }
+
+    .images div .image {
+        color: #999999;
+        position: absolute;
+        top: 0; left: 0;
+    }
+    .images div .votes {
+        color: #F45E65;
+        font-size: 12px;
+    }
+    .images div hr {
+        display: block;
+        text-align: left;
+        border: 0;
+        margin: 4px 0;
+        width: 100%;
+        height: 5px;
+        color: #EB2C3E;
+        background: #EB2C3E;
+    }
+
+

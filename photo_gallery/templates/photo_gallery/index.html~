@@ -1,0 +1,12 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'photo_gallery/style.css' %}"/>
+{% if latest_item_list %}
+    <ul>
+    {% for item in latest_item_list %}
+<li><a href="{% url 'photo_gallery:detail' item.id %}">{{item.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p> No item are available. </p>
+{% endif %}
+
